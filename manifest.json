@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "TakeUForward Tweaker",
+    "version": "1.1",
+    "description": "Add functionality of takeuforward.org for my easier access.",
+    "author": "Amey Tripathi",
+    "permissions": [
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://takeuforward.org/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://takeuforward.org/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "128": "icon.png"
+    }
+}
