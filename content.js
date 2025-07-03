@@ -82,9 +82,6 @@ window.addEventListener("load", () => {
     applyResizers(); // initial run
 });
 
-// ...existing code...
-
-// === Toggle Theory View with "T" key ===
 function setupTheoryViewToggle() {
     document.addEventListener("keydown", function (event) {
         if (event.key === "T" || event.key === "t") {
@@ -100,6 +97,14 @@ function setupTheoryViewToggle() {
 
             if (checkbox) {
                 checkbox.click(); // Visually toggles + triggers all peer styles
+            }
+        }
+
+        // === Mark Complete with "C" key ===
+        if (event.key === "C" || event.key === "c") {
+            const checkbox = document.getElementById("markComplete");
+            if (checkbox) {
+                checkbox.click(); // Simulates a real user click
             }
         }
     });

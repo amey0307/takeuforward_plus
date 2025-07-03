@@ -10,10 +10,13 @@ Features include:
 ## Features
 
 - **Resizable Sidebar:**  
-  Drag the sidebar edge to resize it as you like.
+  Hover over the sidebar's right edge and drag to resize.
 
-- **Keyboard Shortcut:**  
-  Press `T` on your keyboard to toggle the "Theory View" checkbox instantly.
+- **Toggle Theory View:**  
+  Press the `T` key on your keyboard to toggle the "Theory View" checkbox.
+
+- **Mark Complete Shortcut:**  
+  Press the `C` key on your keyboard to toggle the checkbox with the ID `markComplete`
 
 ---
 
