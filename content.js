@@ -84,29 +84,32 @@ window.addEventListener("load", () => {
 
 function setupTheoryViewToggle() {
     document.addEventListener("keydown", function (event) {
-        if (event.key === "T" || event.key === "t") {
-            const allStickyDivs = document.querySelectorAll('div.sticky');
-            let checkbox = null;
+        chrome.storage.sync.get(['enableKeydown'], (result) => {
+            if (!result.enableKeydown) return;
 
-            allStickyDivs.forEach(div => {
-                const labelText = div.querySelector('p')?.textContent.trim();
-                if (labelText === 'Theory View') {
-                    checkbox = div.querySelector('input[type="checkbox"].peer');
+            if (event.key === "T" || event.key === "t") {
+                const allStickyDivs = document.querySelectorAll('div.sticky');
+                let checkbox = null;
+
+                allStickyDivs.forEach(div => {
+                    const labelText = div.querySelector('p')?.textContent.trim();
+                    if (labelText === 'Theory View') {
+                        checkbox = div.querySelector('input[type="checkbox"].peer');
+                    }
+                });
+
+                if (checkbox) {
+                    checkbox.click(); // Visually toggles + triggers all peer styles
                 }
-            });
-
-            if (checkbox) {
-                checkbox.click(); // Visually toggles + triggers all peer styles
             }
-        }
 
-        // === Mark Complete with "C" key ===
-        if (event.key === "C" || event.key === "c") {
-            const checkbox = document.getElementById("markComplete");
-            if (checkbox) {
-                checkbox.click(); // Simulates a real user click
+            if (event.key === "C" || event.key === "c") {
+                const checkbox = document.getElementById("markComplete");
+                if (checkbox) {
+                    checkbox.click();
+                }
             }
-        }
+        });
     });
 }
 
